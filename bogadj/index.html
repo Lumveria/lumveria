@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BOGA DJ | Eventos Sociales</title>
+
+  <meta name="description"
+        content="BOGA DJ Eventos Sociales. Música, audio, iluminación y experiencia DJ para bodas, XV años, cumpleaños y eventos privados.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #070707;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    :root {
+      --gold: #d7b35a;
+      --silver: #d8d8d8;
+      --dark: #070707;
+      --card: #121212;
+      --soft: #a9a9a9;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+
+      background:
+        radial-gradient(circle at center, rgba(215,179,90,.17), transparent 40%),
+        linear-gradient(135deg, #050505, #161616, #050505);
+    }
+
+    .hero-content {
+      max-width: 950px;
+    }
+
+    .logo {
+      font-size: clamp(3.2rem, 10vw, 7rem);
+      font-weight: 900;
+      letter-spacing: 8px;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .dj {
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      letter-spacing: 12px;
+      color: var(--silver);
+      margin-top: 10px;
+    }
+
+    .subtitle {
+      margin-top: 25px;
+      font-size: 1.15rem;
+      color: #e5e5e5;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      margin-top: 35px;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 25px auto;
+      color: #bbbbbb;
+      font-size: 1.08rem;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #080808;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 85px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: #999999;
+      max-width: 650px;
+      margin: 12px auto 0;
+    }
+
+    /* PAQUETES */
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .package {
+      position: relative;
+      background: linear-gradient(145deg, #161616, #0b0b0b);
+      border: 1px solid #272727;
+      border-radius: 20px;
+      padding: 35px 28px;
+      transition: .3s;
+    }
+
+    .package:hover {
+      transform: translateY(-7px);
+      border-color: var(--gold);
+    }
+
+    .package.featured {
+      border: 1px solid var(--gold);
+    }
+
+    .badge {
+      position: absolute;
+      top: -14px;
+      right: 20px;
+      background: var(--gold);
+      color: #000;
+      padding: 5px 13px;
+      border-radius: 20px;
+      font-size: .75rem;
+      font-weight: bold;
+    }
+
+    .package h3 {
+      color: var(--gold);
+      font-size: 1.65rem;
+      margin-bottom: 8px;
+    }
+
+    .package .package-subtitle {
+      color: #888;
+      margin-bottom: 25px;
+    }
+
+    .package ul {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .package li {
+      margin: 13px 0;
+      color: #d3d3d3;
+    }
+
+    .package li::before {
+      content: "✓";
+      color: var(--gold);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    /* EVENTOS */
+
+    .events {
+      background: #0d0d0d;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .event {
+      min-height: 170px;
+      border-radius: 15px;
+      background:
+        radial-gradient(circle at top, rgba(215,179,90,.15), transparent 55%),
+        #151515;
+
+      border: 1px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .event:hover {
+      border-color: var(--gold);
+    }
+
+    /* EXPERIENCIA */
+
+    .experience {
+      text-align: center;
+    }
+
+    .experience-text {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.15rem;
+      color: #bbb;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 750px;
+      margin: 50px auto 0;
+      gap: 20px;
+    }
+
+    .stat {
+      padding: 25px;
+      border-top: 1px solid var(--gold);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 2rem;
+    }
+
+    .stat span {
+      color: #aaa;
+      font-size: .9rem;
+    }
+
+    /* CTA */
+
+    .cta {
+      background:
+        radial-gradient(circle at center, rgba(215,179,90,.2), transparent 55%),
+        #101010;
+
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    .cta h2 span {
+      color: var(--gold);
+    }
+
+    .cta p {
+      color: #aaa;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 1px solid #222;
+      color: #777;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    /* WHATSAPP FLOTANTE */
+
+    .whatsapp {
+      position: fixed;
+      width: 62px;
+      height: 62px;
+      right: 22px;
+      bottom: 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 28px;
+
+      box-shadow: 0 7px 25px rgba(0,0,0,.45);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+
+      .packages,
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 18px;
+      }
+
+      .dj {
+        letter-spacing: 7px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PORTADA -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="logo">BOGA</div>
+      <div class="dj">DJ</div>
+
+      <div class="subtitle">
+        EVENTOS SOCIALES
+      </div>
+
+      <h1>
+        Hacemos que tu evento
+        <span>se sienta diferente.</span>
+      </h1>
+
+      <p>
+        Música, audio, iluminación y experiencia DJ para crear
+        el ambiente perfecto en uno de los días más importantes para ti.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn btn-gold"
+          href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20cotizar%20un%20evento."
+          target="_blank">
+          COTIZA TU EVENTO
+        </a>
+
+        <a class="btn btn-outline" href="#paquetes">
+          VER PAQUETES
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- PAQUETES -->
+
+  <section id="paquetes">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>Elige tu experiencia</small>
+        <h2>Paquetes BOGA DJ</h2>
+        <p>
+          Diferentes opciones de producción para adaptarnos
+          al estilo y necesidades de tu evento.
+        </p>
+      </div>
+
+
+      <div class="packages">
+
+        <!-- ESENCIAL -->
+
+        <div class="package">
+
+          <h3>BOGA Esencial</h3>
+
+          <div class="package-subtitle">
+            Lo esencial para comenzar la fiesta.
+          </div>
+
+          <ul>
+            <li>DJ para tu evento</li>
+            <li>Cabina DJ básica</li>
+            <li>Audio profesional</li>
+            <li>Iluminación básica</li>
+            <li>Selección musical personalizada</li>
+          </ul>
+
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/523111379031?text=Hola,%20quiero%20información%20del%20paquete%20BOGA%20Esencial."
+            target="_blank">
+            COTIZAR
+          </a>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="package featured">
+
+          <div class="badge">
+            RECOMENDADO
+          </div>
+
+          <h3>BOGA Social</h3>
+
+          <div class="package-subtitle">
+            Una experiencia más completa para tu celebración.
+          </div>
+
+          <ul>
+            <li>DJ para tu evento</li>
+            <li>Cabina DJ profesional</li>
+            <li>Audio profesional</li>
+            <li>Iluminación para pista</li>
+            <li>Selección musical personalizada</li>
+            <li>Montaje profesional</li>
+          </ul>
+
+          <a
+            class="btn btn-gold"
+            href="https://wa.me/523111379031?text=Hola,%20quiero%20información%20del%20paquete%20BOGA%20Social."
+            target="_blank">
+            COTIZAR
+          </a>
+
+        </div>
+
+
+        <!-- EXPERIENCE -->
+
+        <div class="package">
+
+          <h3>BOGA Experience</h3>
+
+          <div class="package-subtitle">
+            Nuestra experiencia más completa.
+          </div>
+
+          <ul>
+            <li>DJ para tu evento</li>
+            <li>Cabina DJ completa</li>
+            <li>Audio profesional</li>
+            <li>Iluminación avanzada</li>
+            <li>Experiencia audiovisual</li>
+            <li>Montaje premium</li>
+          </ul>
+
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/523111379031?text=Hola,%20quiero%20información%20del%20paquete%20BOGA%20Experience."
+            target="_blank">
+            COTIZAR
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EVENTOS -->
+
+  <section class="events">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>Celebraciones</small>
+        <h2>Tu evento merece su propia energía</h2>
+      </div>
+
+      <div class="event-grid">
+
+        <div class="event">Bodas</div>
+        <div class="event">XV Años</div>
+        <div class="event">Cumpleaños</div>
+        <div class="event">Graduaciones</div>
+        <div class="event">Eventos Privados</div>
+        <div class="event">Eventos Empresariales</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCIA -->
+
+  <section class="experience">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>BOGA DJ</small>
+        <h2>Más que poner música</h2>
+      </div>
+
+      <p class="experience-text">
+        Cada evento es diferente. La música se construye alrededor
+        de tus invitados, tu celebración y el momento que quieres crear.
+        Nuestra prioridad es que la pista tenga energía y que tú disfrutes
+        tu evento.
+      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>DJ</strong>
+          <span>Experiencia profesional</span>
+        </div>
+
+        <div class="stat">
+          <strong>Audio</strong>
+          <span>Sonido para tu celebración</span>
+        </div>
+
+        <div class="stat">
+          <strong>Party</strong>
+          <span>Una experiencia para recordar</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACTO -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        ¿Ya tienes fecha para
+        <span>tu evento?</span>
+      </h2>
+
+      <p>
+        Escríbenos por WhatsApp y cuéntanos qué estás planeando.
+      </p>
+
+      <a
+        class="btn btn-gold"
+        href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20cotizar%20mi%20evento."
+        target="_blank">
+        WHATSAPP · 311 137 9031
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      <strong>BOGA DJ Eventos Sociales</strong>
+    </p>
+
+    <p>
+      Música · Audio · Iluminación · Experiencias
+    </p>
+
+    <p style="margin-top:15px;">
+      © 2026 BOGA DJ
+    </p>
+
+  </footer>
+
+
+  <!-- BOTÓN WHATSAPP -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20información."
+    target="_blank"
+    aria-label="WhatsApp">
+    ☎
+  </a>
+
+</body>
+</html>
