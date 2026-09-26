@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BOGA DJ | Eventos Sociales</title>
-
-  <meta name="description"
-        content="BOGA DJ Eventos Sociales. Música, audio, iluminación y experiencia DJ para bodas, XV años, cumpleaños y eventos privados.">
+  <meta name="description" content="BOGA DJ Eventos Sociales. Música, audio, iluminación y experiencia premium para bodas, XV años, cumpleaños y eventos privados." />
 
   <style>
     * {
@@ -22,290 +19,359 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #070707;
-      color: #ffffff;
+      background: #050505;
+      color: #fff;
       line-height: 1.6;
     }
 
     :root {
-      --gold: #d7b35a;
-      --silver: #d8d8d8;
-      --dark: #070707;
-      --card: #121212;
-      --soft: #a9a9a9;
+      --gold: #d6ab52;
+      --gold-soft: #f3d38c;
+      --silver: #dddddd;
+      --dark: #050505;
+      --card: rgba(18, 18, 18, 0.9);
+      --line: rgba(255,255,255,0.08);
+      --text-soft: #c9c9c9;
+      --blue: #146bff;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
     }
 
     /* HERO */
-
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-
       background:
-        radial-gradient(circle at center, rgba(215,179,90,.17), transparent 40%),
-        linear-gradient(135deg, #050505, #161616, #050505);
+        linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.70)),
+        radial-gradient(circle at center, rgba(214,171,82,.18), transparent 35%),
+        url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      text-align: center;
+      padding: 80px 0;
     }
 
     .hero-content {
-      max-width: 950px;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .logo {
-      font-size: clamp(3.2rem, 10vw, 7rem);
+    .brand-title {
+      font-size: clamp(3.2rem, 8vw, 6rem);
       font-weight: 900;
-      letter-spacing: 8px;
+      letter-spacing: 6px;
       color: var(--gold);
       line-height: 1;
     }
 
-    .dj {
-      font-size: clamp(1.5rem, 5vw, 3rem);
-      letter-spacing: 12px;
+    .brand-sub {
+      font-size: clamp(1.4rem, 3vw, 2.3rem);
+      letter-spacing: 10px;
       color: var(--silver);
-      margin-top: 10px;
+      margin-top: 8px;
+      font-weight: 700;
     }
 
-    .subtitle {
-      margin-top: 25px;
-      font-size: 1.15rem;
-      color: #e5e5e5;
-      letter-spacing: 2px;
+    .hero-mini {
+      margin-top: 18px;
+      letter-spacing: 4px;
+      color: #f1f1f1;
+      font-size: .95rem;
+      text-transform: uppercase;
     }
 
     .hero h1 {
-      margin-top: 35px;
-      font-size: clamp(2rem, 6vw, 4rem);
+      margin-top: 30px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
       line-height: 1.1;
+      font-weight: 800;
     }
 
-    .hero h1 span {
+    .hero h1 .gold {
       color: var(--gold);
     }
 
     .hero p {
-      max-width: 650px;
-      margin: 25px auto;
-      color: #bbbbbb;
-      font-size: 1.08rem;
+      margin: 22px auto 0;
+      max-width: 760px;
+      color: var(--text-soft);
+      font-size: 1.1rem;
     }
 
-    .buttons {
+    .hero-buttons {
       margin-top: 35px;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 15px 28px;
-      text-decoration: none;
-      border-radius: 40px;
-      font-weight: bold;
-      transition: .3s;
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: #080808;
-    }
-
-    .btn-outline {
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      border-radius: 50px;
+      font-weight: 700;
+      transition: .3s ease;
+      border: 2px solid transparent;
     }
 
     .btn:hover {
       transform: translateY(-3px);
     }
 
-    /* GENERAL */
-
-    section {
-      padding: 85px 20px;
+    .btn-gold {
+      background: linear-gradient(180deg, #ffd980, #d6ab52);
+      color: #111;
     }
 
-    .container {
-      max-width: 1150px;
-      margin: auto;
+    .btn-outline {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 0;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
 
     .section-title small {
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 4px;
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
     }
 
     .section-title h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-top: 8px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 12px;
     }
 
     .section-title p {
-      color: #999999;
-      max-width: 650px;
-      margin: 12px auto 0;
+      max-width: 700px;
+      margin: auto;
+      color: var(--text-soft);
     }
 
     /* PAQUETES */
-
     .packages {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 24px;
     }
 
-    .package {
-      position: relative;
-      background: linear-gradient(145deg, #161616, #0b0b0b);
-      border: 1px solid #272727;
-      border-radius: 20px;
-      padding: 35px 28px;
-      transition: .3s;
+    .package-card {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: #0c0c0c;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: .3s ease;
     }
 
-    .package:hover {
-      transform: translateY(-7px);
-      border-color: var(--gold);
+    .package-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(214,171,82,.55);
     }
 
-    .package.featured {
-      border: 1px solid var(--gold);
-    }
-
-    .badge {
-      position: absolute;
-      top: -14px;
-      right: 20px;
-      background: var(--gold);
-      color: #000;
-      padding: 5px 13px;
-      border-radius: 20px;
-      font-size: .75rem;
-      font-weight: bold;
-    }
-
-    .package h3 {
-      color: var(--gold);
-      font-size: 1.65rem;
-      margin-bottom: 8px;
-    }
-
-    .package .package-subtitle {
-      color: #888;
-      margin-bottom: 25px;
-    }
-
-    .package ul {
-      list-style: none;
-      margin-bottom: 30px;
-    }
-
-    .package li {
-      margin: 13px 0;
-      color: #d3d3d3;
-    }
-
-    .package li::before {
-      content: "✓";
-      color: var(--gold);
-      margin-right: 10px;
-      font-weight: bold;
-    }
-
-    /* EVENTOS */
-
-    .events {
-      background: #0d0d0d;
-    }
-
-    .event-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .event {
-      min-height: 170px;
-      border-radius: 15px;
-      background:
-        radial-gradient(circle at top, rgba(215,179,90,.15), transparent 55%),
-        #151515;
-
-      border: 1px solid #222;
+    .package-hero {
+      min-height: 290px;
+      padding: 28px 24px;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    .package-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.6));
+    }
+
+    .package-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .esencial-bg {
+      background:
+        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.4)),
+        url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=80") center/cover no-repeat;
+    }
+
+    .social-bg {
+      background:
+        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.4)),
+        url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80") center/cover no-repeat;
+    }
+
+    .experience-bg {
+      background:
+        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80") center/cover no-repeat;
+    }
+
+    .package-brand {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,.45);
+    }
+
+    .package-name {
+      margin-top: 14px;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--gold-soft);
+      line-height: 1.05;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0,0,0,.5);
+    }
+
+    .package-slogan {
+      margin-top: 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      max-width: 330px;
+    }
+
+    .package-body {
+      padding: 26px 22px 28px;
+      background: linear-gradient(180deg, rgba(11,11,11,.97), rgba(18,18,18,.97));
+    }
+
+    .features {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .features li {
+      color: #efefef;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .features li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .package-events {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .event-pill {
+      border: 1px solid rgba(214,171,82,.35);
+      color: var(--silver);
+      border-radius: 30px;
+      padding: 8px 12px;
+      font-size: .88rem;
+    }
+
+    .package-phrase {
+      margin: 12px 0 22px;
+      color: var(--gold-soft);
+      font-style: italic;
       text-align: center;
-      font-size: 1.25rem;
-      font-weight: bold;
-      transition: .3s;
+      font-size: 1rem;
     }
 
-    .event:hover {
-      border-color: var(--gold);
-    }
-
-    /* EXPERIENCIA */
-
-    .experience {
+    .package-btn {
+      width: 100%;
       text-align: center;
-    }
-
-    .experience-text {
-      max-width: 800px;
-      margin: auto;
       font-size: 1.15rem;
-      color: #bbb;
+      padding: 16px 20px;
+      border-radius: 50px;
+      background: linear-gradient(180deg, #ffd980, #d6ab52);
+      color: #111;
+      font-weight: 900;
+      display: block;
     }
 
-    .stats {
+    .package-btn.blue {
+      background: linear-gradient(180deg, #3e8dff, #146bff);
+      color: #fff;
+    }
+
+    /* WHY */
+    .why {
+      background: linear-gradient(180deg, #060606, #101010);
+    }
+
+    .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      max-width: 750px;
-      margin: 50px auto 0;
-      gap: 20px;
+      gap: 22px;
     }
 
-    .stat {
-      padding: 25px;
-      border-top: 1px solid var(--gold);
+    .why-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
     }
 
-    .stat strong {
-      display: block;
+    .why-card h3 {
       color: var(--gold);
-      font-size: 2rem;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
     }
 
-    .stat span {
-      color: #aaa;
-      font-size: .9rem;
+    .why-card p {
+      color: var(--text-soft);
     }
 
     /* CTA */
-
     .cta {
       background:
-        radial-gradient(circle at center, rgba(215,179,90,.2), transparent 55%),
-        #101010;
-
+        linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
       text-align: center;
     }
 
+    .cta-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 28px;
+      border-radius: 24px;
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(214,171,82,.25);
+      backdrop-filter: blur(4px);
+    }
+
     .cta h2 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      margin-bottom: 15px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 14px;
     }
 
     .cta h2 span {
@@ -313,352 +379,264 @@
     }
 
     .cta p {
-      color: #aaa;
-      margin-bottom: 30px;
-      font-size: 1.1rem;
+      color: #d0d0d0;
+      margin-bottom: 25px;
+      font-size: 1.08rem;
     }
 
     /* FOOTER */
-
     footer {
-      padding: 40px 20px;
+      padding: 36px 0;
       text-align: center;
-      border-top: 1px solid #222;
-      color: #777;
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,.06);
+      color: #a5a5a5;
     }
 
     footer strong {
       color: var(--gold);
     }
 
-    /* WHATSAPP FLOTANTE */
-
-    .whatsapp {
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
       position: fixed;
+      right: 18px;
+      bottom: 18px;
       width: 62px;
       height: 62px;
-      right: 22px;
-      bottom: 22px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       border-radius: 50%;
       background: #25D366;
       color: white;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 28px;
-
-      box-shadow: 0 7px 25px rgba(0,0,0,.45);
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
       z-index: 999;
     }
 
-    @media (max-width: 850px) {
-
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
       .packages,
-      .event-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
+      .why-grid {
         grid-template-columns: 1fr;
       }
 
       section {
-        padding: 65px 18px;
+        padding: 70px 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .brand-title {
+        letter-spacing: 3px;
       }
 
-      .dj {
-        letter-spacing: 7px;
+      .brand-sub {
+        letter-spacing: 5px;
       }
 
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .package-name {
+        font-size: 1.9rem;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- PORTADA -->
-
   <header class="hero">
-
-    <div class="hero-content">
-
-      <div class="logo">BOGA</div>
-      <div class="dj">DJ</div>
-
-      <div class="subtitle">
-        EVENTOS SOCIALES
-      </div>
+    <div class="container hero-content">
+      <div class="brand-title">BOGA</div>
+      <div class="brand-sub">DJ</div>
+      <div class="hero-mini">EVENTOS SOCIALES</div>
 
       <h1>
         Hacemos que tu evento
-        <span>se sienta diferente.</span>
+        <span class="gold">se sienta diferente.</span>
       </h1>
 
       <p>
-        Música, audio, iluminación y experiencia DJ para crear
-        el ambiente perfecto en uno de los días más importantes para ti.
+        Música, audio, iluminación y experiencia DJ para crear el ambiente
+        perfecto en uno de los días más importantes para ti.
       </p>
 
-      <div class="buttons">
-
-        <a
-          class="btn btn-gold"
-          href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20cotizar%20un%20evento."
-          target="_blank">
+      <div class="hero-buttons">
+        <a class="btn btn-gold" href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20cotizar%20mi%20evento." target="_blank">
           COTIZA TU EVENTO
         </a>
-
         <a class="btn btn-outline" href="#paquetes">
           VER PAQUETES
         </a>
-
       </div>
-
     </div>
-
   </header>
 
-
-  <!-- PAQUETES -->
-
   <section id="paquetes">
-
     <div class="container">
-
       <div class="section-title">
-        <small>Elige tu experiencia</small>
-        <h2>Paquetes BOGA DJ</h2>
+        <small>Nuestros paquetes</small>
+        <h2>Diseñados para diferentes tipos de evento</h2>
         <p>
-          Diferentes opciones de producción para adaptarnos
-          al estilo y necesidades de tu evento.
+          Inspirados en tu publicidad de Facebook, con una presentación más premium y clara para tus clientes.
         </p>
       </div>
 
-
       <div class="packages">
 
-        <!-- ESENCIAL -->
-
-        <div class="package">
-
-          <h3>BOGA Esencial</h3>
-
-          <div class="package-subtitle">
-            Lo esencial para comenzar la fiesta.
+        <article class="package-card">
+          <div class="package-hero esencial-bg">
+            <div class="package-brand">BOGA DJ</div>
+            <div class="package-name">BOGA ESENCIAL</div>
+            <div class="package-slogan">Música para los momentos más importantes</div>
           </div>
+          <div class="package-body">
+            <ul class="features">
+              <li>DJ profesional</li>
+              <li>Cabina DJ básica</li>
+              <li>Equipo de sonido de alta calidad</li>
+              <li>Iluminación ambiental</li>
+              <li>Música personalizada</li>
+            </ul>
 
-          <ul>
-            <li>DJ para tu evento</li>
-            <li>Cabina DJ básica</li>
-            <li>Audio profesional</li>
-            <li>Iluminación básica</li>
-            <li>Selección musical personalizada</li>
-          </ul>
+            <div class="package-events">
+              <span class="event-pill">Bodas</span>
+              <span class="event-pill">XV Años</span>
+              <span class="event-pill">Cumpleaños</span>
+              <span class="event-pill">Eventos Privados</span>
+            </div>
 
-          <a
-            class="btn btn-outline"
-            href="https://wa.me/523111379031?text=Hola,%20quiero%20información%20del%20paquete%20BOGA%20Esencial."
-            target="_blank">
-            COTIZAR
-          </a>
+            <div class="package-phrase">La música también cuenta tu historia.</div>
 
-        </div>
-
-
-        <!-- SOCIAL -->
-
-        <div class="package featured">
-
-          <div class="badge">
-            RECOMENDADO
+            <a class="package-btn" href="https://wa.me/523111379031?text=Hola,%20quiero%20cotizar%20el%20paquete%20BOGA%20Esencial." target="_blank">
+              COTIZA TU EVENTO · 311 137 9031
+            </a>
           </div>
+        </article>
 
-          <h3>BOGA Social</h3>
-
-          <div class="package-subtitle">
-            Una experiencia más completa para tu celebración.
+        <article class="package-card">
+          <div class="package-hero social-bg">
+            <div class="package-brand">BOGA DJ</div>
+            <div class="package-name">BOGA SOCIAL</div>
+            <div class="package-slogan">Música, iluminación y ambiente para un evento inolvidable</div>
           </div>
+          <div class="package-body">
+            <ul class="features">
+              <li>DJ profesional</li>
+              <li>Cabina DJ con iluminación</li>
+              <li>Equipo de sonido profesional</li>
+              <li>Iluminación avanzada</li>
+              <li>Pantallas visuales con ambientación</li>
+              <li>Efectos de ambiente</li>
+              <li>Música personalizada para cada momento</li>
+            </ul>
 
-          <ul>
-            <li>DJ para tu evento</li>
-            <li>Cabina DJ profesional</li>
-            <li>Audio profesional</li>
-            <li>Iluminación para pista</li>
-            <li>Selección musical personalizada</li>
-            <li>Montaje profesional</li>
-          </ul>
+            <div class="package-events">
+              <span class="event-pill">Bodas</span>
+              <span class="event-pill">XV Años</span>
+              <span class="event-pill">Cumpleaños</span>
+              <span class="event-pill">Eventos Privados</span>
+            </div>
 
-          <a
-            class="btn btn-gold"
-            href="https://wa.me/523111379031?text=Hola,%20quiero%20información%20del%20paquete%20BOGA%20Social."
-            target="_blank">
-            COTIZAR
-          </a>
+            <div class="package-phrase">La música también cuenta tu historia.</div>
 
-        </div>
-
-
-        <!-- EXPERIENCE -->
-
-        <div class="package">
-
-          <h3>BOGA Experience</h3>
-
-          <div class="package-subtitle">
-            Nuestra experiencia más completa.
+            <a class="package-btn blue" href="https://wa.me/523111379031?text=Hola,%20quiero%20cotizar%20el%20paquete%20BOGA%20Social." target="_blank">
+              COTIZA TU EVENTO · 311 137 9031
+            </a>
           </div>
+        </article>
 
-          <ul>
-            <li>DJ para tu evento</li>
-            <li>Cabina DJ completa</li>
-            <li>Audio profesional</li>
-            <li>Iluminación avanzada</li>
-            <li>Experiencia audiovisual</li>
-            <li>Montaje premium</li>
-          </ul>
+        <article class="package-card">
+          <div class="package-hero experience-bg">
+            <div class="package-brand">BOGA DJ</div>
+            <div class="package-name">BOGA EXPERIENCE</div>
+            <div class="package-slogan">Una experiencia completa que eleva tu evento</div>
+          </div>
+          <div class="package-body">
+            <ul class="features">
+              <li>DJ profesional</li>
+              <li>Cabina DJ premium con diseño personalizado</li>
+              <li>Equipo de sonido de alto rendimiento</li>
+              <li>Iluminación profesional y ambientación total</li>
+              <li>Pantallas visuales LED</li>
+              <li>Efectos especiales</li>
+              <li>Pista de baile iluminada</li>
+              <li>Música 100% personalizada</li>
+              <li>Asesoría completa en música y ambientación</li>
+            </ul>
 
-          <a
-            class="btn btn-outline"
-            href="https://wa.me/523111379031?text=Hola,%20quiero%20información%20del%20paquete%20BOGA%20Experience."
-            target="_blank">
-            COTIZAR
-          </a>
+            <div class="package-events">
+              <span class="event-pill">Bodas</span>
+              <span class="event-pill">XV Años</span>
+              <span class="event-pill">Cumpleaños</span>
+              <span class="event-pill">Eventos Privados</span>
+            </div>
 
-        </div>
+            <div class="package-phrase">La música también cuenta tu historia.</div>
+
+            <a class="package-btn" href="https://wa.me/523111379031?text=Hola,%20quiero%20cotizar%20el%20paquete%20BOGA%20Experience." target="_blank">
+              COTIZA TU EVENTO · 311 137 9031
+            </a>
+          </div>
+        </article>
 
       </div>
-
     </div>
-
   </section>
 
-
-  <!-- EVENTOS -->
-
-  <section class="events">
-
+  <section class="why">
     <div class="container">
-
       <div class="section-title">
-        <small>Celebraciones</small>
-        <h2>Tu evento merece su propia energía</h2>
+        <small>¿Por qué BOGA DJ?</small>
+        <h2>Una presentación más premium para vender mejor</h2>
+        <p>
+          Esta parte ayuda a que la página se vea como tu publicidad: elegante, confiable y enfocada en conversión.
+        </p>
       </div>
 
-      <div class="event-grid">
-
-        <div class="event">Bodas</div>
-        <div class="event">XV Años</div>
-        <div class="event">Cumpleaños</div>
-        <div class="event">Graduaciones</div>
-        <div class="event">Eventos Privados</div>
-        <div class="event">Eventos Empresariales</div>
-
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Imagen profesional</h3>
+          <p>Tu página transmite mejor el nivel de tus eventos y refuerza tu marca personal.</p>
+        </div>
+        <div class="why-card">
+          <h3>Paquetes claros</h3>
+          <p>El cliente entiende rápido qué incluye cada opción y puede cotizar por WhatsApp.</p>
+        </div>
+        <div class="why-card">
+          <h3>Más conversiones</h3>
+          <p>El objetivo es que la gente vea, se emocione y te escriba de inmediato.</p>
+        </div>
       </div>
-
     </div>
-
   </section>
-
-
-  <!-- EXPERIENCIA -->
-
-  <section class="experience">
-
-    <div class="container">
-
-      <div class="section-title">
-        <small>BOGA DJ</small>
-        <h2>Más que poner música</h2>
-      </div>
-
-      <p class="experience-text">
-        Cada evento es diferente. La música se construye alrededor
-        de tus invitados, tu celebración y el momento que quieres crear.
-        Nuestra prioridad es que la pista tenga energía y que tú disfrutes
-        tu evento.
-      </p>
-
-      <div class="stats">
-
-        <div class="stat">
-          <strong>DJ</strong>
-          <span>Experiencia profesional</span>
-        </div>
-
-        <div class="stat">
-          <strong>Audio</strong>
-          <span>Sonido para tu celebración</span>
-        </div>
-
-        <div class="stat">
-          <strong>Party</strong>
-          <span>Una experiencia para recordar</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACTO -->
 
   <section class="cta">
-
     <div class="container">
-
-      <h2>
-        ¿Ya tienes fecha para
-        <span>tu evento?</span>
-      </h2>
-
-      <p>
-        Escríbenos por WhatsApp y cuéntanos qué estás planeando.
-      </p>
-
-      <a
-        class="btn btn-gold"
-        href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20cotizar%20mi%20evento."
-        target="_blank">
-        WHATSAPP · 311 137 9031
-      </a>
-
+      <div class="cta-box">
+        <h2>Haz que tu evento <span>se viva diferente</span></h2>
+        <p>
+          Escríbenos por WhatsApp y te ayudamos a elegir el paquete ideal para tu celebración.
+        </p>
+        <a class="btn btn-gold" href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20información%20para%20mi%20evento." target="_blank">
+          WHATSAPP · 311 137 9031
+        </a>
+      </div>
     </div>
-
   </section>
 
-
-  <!-- FOOTER -->
-
   <footer>
-
-    <p>
-      <strong>BOGA DJ Eventos Sociales</strong>
-    </p>
-
-    <p>
-      Música · Audio · Iluminación · Experiencias
-    </p>
-
-    <p style="margin-top:15px;">
-      © 2026 BOGA DJ
-    </p>
-
+    <div class="container">
+      <p><strong>BOGA DJ Eventos Sociales</strong></p>
+      <p>Música · Audio · Iluminación · Experiencias</p>
+      <p style="margin-top:10px;">© 2026 BOGA DJ</p>
+    </div>
   </footer>
 
-
-  <!-- BOTÓN WHATSAPP -->
-
-  <a
-    class="whatsapp"
-    href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20información."
-    target="_blank"
-    aria-label="WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/523111379031?text=Hola%20BOGA%20DJ,%20quiero%20información." target="_blank" aria-label="WhatsApp">
     ☎
   </a>
 
